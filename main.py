@@ -1,6 +1,13 @@
 import feladatok
+import gyakorlas
+#gyakorlas.veletlen()
+gyakorlas.fel1()
+gyakorlas.fel2()
+gyakorlas.fel3()
+gyakorlas.fel4()
+gyakorlas.fel5("ládiá")
 #feladatok.fel1()
-#feladatok.fel2(1234)
+#feladatok.fel2(12341)
 #feladatok.fel3()
 #feladatok.fel4()
 #feladatok.fel5()
@@ -9,7 +16,7 @@ import feladatok
 #feladatok.kiallitasfel()
 #feladatok.fel8()
 #feladatok.fel9()
-#feladatok.fel10(nem sikerült)
+#feladatok.fel10()
 #feladatok.fel11()
 #feladatok.fel12(nincs kész)
 #feladatok.fel13(nincs kész)

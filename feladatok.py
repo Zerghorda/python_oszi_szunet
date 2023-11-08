@@ -14,16 +14,20 @@ def fel1():
 
 
 def fel2(szam):
-    print("feladat:2.	Írj metódust, mely a paraméterében kapott számról megmondja, hogy hány 1-es, 10-es, 100 - as, 1000 - es, stb van benne! használd hozzá az egész osztás operátorát - // ! pl: 123//10 =12  123%10=3")
-    ezresek = szam // 1000
-    szazas = szam // 100
-    tizes = szam // 10
-    egyesek = szam // 1
-    print(f"ezresek:{ezresek:.0f}\nszázasok:{szazas:.0f}\ntízedesek:{tizes:.0f}\negyesek:{egyesek:.0f}")
+    print("feladat:2.	Írj metódust, mely a paraméterében kapott számról megmondja, "
+          "hogy hány 1-es, 10-es, 100 - as, 1000 - es, stb van benne! "
+          "használd hozzá az egész osztás operátorát - // ! pl: 123//10 =12  123%10=3")
+    while szam > 9:
+        print("következö számjegy: ", szam % 10)
+        szam = szam // 10
+        print("Az aktuális szám: ", szam)
+    print("Az utolsó számjegy: ", szam)
 
 
 def fel3():
-    print("feladat:3.	+++ Írj eljárást, mely paraméterében kap egy számot, majd összeadja a számjegyeket és kiírja a számjegyek összegét a képernyőre. PL. 324 -> „324 számjegyeinek összege: 9")
+    print("feladat:3.	+++ Írj eljárást, mely paraméterében kap egy számot,"
+          " majd összeadja a számjegyeket és kiírja a számjegyek összegét a képernyőre. "
+          "PL. 324 -> „324 számjegyeinek összege: 9")
     szam = input("Adjon meg egy számot!")
     i = 0
     osszeg = 0
@@ -34,12 +38,15 @@ def fel3():
 
 
 def fel4():
-    print("feladat:4.	Egy hétfői napon az 1-es csoportnak 9 órája van. Az első órában a teljesítményük 90%-át képesek nyújtani. "
+    print("feladat:4.	Egy hétfői napon az 1-es csoportnak 9 órája van. "
+          "Az első órában a teljesítményük 90%-át képesek nyújtani. "
           "A 2-3. órában már kissé éhesek, és csupán 60%-os a munkabírásuk. "
           "A 4-7. órában szerencsére programozást tanulnak, így némiképp javul a hatékonyságuk (70%), a 8-9. "
           "órában azonban már újra lecsökken (50%)."
-          "Írj metódust, mely paraméterében kap egy egész számot 1 és 9 között (melyik órán vannak; jelezz hibát, ha nem ebben az intervallumban lévő számot kapsz,"
-          " pl. “Ez már tényleg túlzás.”). Példa egy esetre: Be: 3, Ki: “Még bírjuk (60%).”    -  nem kell tesztfüggvényeket írni, de az alábbi táblázat alapján ellenőrizzétek a munkátokat!")
+          "Írj metódust, mely paraméterében kap egy egész számot 1 és 9 között (melyik órán vannak; jelezz hibát, "
+          "ha nem ebben az intervallumban lévő számot kapsz,"
+          " pl. “Ez már tényleg túlzás.”). Példa egy esetre: Be: 3, Ki: “Még bírjuk (60%).” "
+          "  nem kell tesztfüggvényeket írni, de az alábbi táblázat alapján ellenőrizzétek a munkátokat!")
     szam: int = int(input("Adjon meg 1-9-ig egy számot!"))
     if szam == 1:
         print("Még 90% on vagyunk!")
@@ -184,21 +191,27 @@ def fel10():
           "Addig kérd be a jeleket, amíg jó jelet nem ad meg. "
           "Hányszor adott meg „f” betűt?"
           "Mekkora a leghosszabb f sorozat?")
-    eredmeny: str = input("Adja meg az eredményt!(f,i)")
+
     db = 0
-    hasonlo = 0
-    i = 1
+    hasonlo = 1
+    elozo_szam = False
+    i = 0
     while i < 10:
-        while not (eredmeny != "f" or eredmeny != "i"):
+        eredmeny: str = input("Adja meg az eredményt!(f,i)")
+        while not (eredmeny == "f" or eredmeny == "i" or eredmeny == "F" or eredmeny == "I"):
             print("nem jó!")
             eredmeny: str = input("Adja meg az eredményt!(f,i)")
-        if eredmeny == "f":
+        if eredmeny == "f" or eredmeny == "F":
             db += 1
-        if eredmeny[i] == "f" and eredmeny[i] == "f":
-           hasonlo += 1
-        i += 1
-    print(f"")
+            if elozo_szam:
+                hasonlo += 1
+            else:
+                elozo_szam = False
 
+
+
+        i += 1
+    print(db)
 
 def fel11():
     print("feladat:11.	++ Írj programot, mely beolvas egy pozitív egész számot, és megmondja, hogy tökéletes szám-e! "
